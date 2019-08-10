@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text: white;
+  --bg: rgb(224, 218, 218);
+  --inverse-bg: #333;
+  --svg-bg: linear-gradient(75deg, #f44336, #334452);
+}
+
+.container {
+  text-align: center;
+  color: var(--text);
+}
+
+.container .display {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+.container .display__title {
+  font-weight: bold;
+  color: #40c1e9;
+  background: var(--inverse-bg);
+}
+
+.container .display__svg {
+  background: var(--svg-bg);
+  -webkit-box-shadow: 0 2px 4px #333;
+          box-shadow: 0 2px 4px #333;
+  text-align: center;
+}
+
+.container #tooltip {
+  text-align: left;
+  background: rgba(47, 79, 79, 0.938);
+  pointer-events: none;
+  shape-rendering: crispEdges;
+}
+
+.container #tooltip label {
+  color: var(--text);
+}
+
+.container #tooltip label b {
+  color: #0bcae2f2;
+}
+
+.container #x-axis,
+.container #y-axis {
+  font-weight: 600;
+  shape-rendering: crispEdges;
+}
+
+.container .y-axis-label {
+  font-size: 1.5em;
+}
+
+@media only screen and (min-width: 768px) {
+  .container .y-axis-label {
+    font-size: 2em;
+  }
+}
+
+#preloader {
+  color: rgba(236, 106, 19, 0.884);
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */
