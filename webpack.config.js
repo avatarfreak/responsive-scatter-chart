@@ -46,10 +46,16 @@ module.exports = {
         ]
       },
       {
+        test: /favicon\.ico$/,
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]?[hash:8]"
+        }
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           use: [
-           
             "css-loader", // translates CSS into CommonJS
             "sass-loader" // compiles Sass to CSS, using Node Sass by default
           ]
@@ -68,7 +74,7 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin("styles.css"),
-    
+
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
