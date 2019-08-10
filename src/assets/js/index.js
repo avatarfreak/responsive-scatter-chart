@@ -1,2 +1,2 @@
 import "../scss/main.scss"
-import "./scatter.js";
+import "./scatter";

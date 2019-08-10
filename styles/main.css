@@ -4,10 +4,15 @@
 }
 
 :root {
-  --text: white;
+  --text: #67809f;
+  --title_text: #b0e4f2ba;
   --bg: rgb(224, 218, 218);
   --inverse-bg: #333;
-  --svg-bg: linear-gradient(75deg, #f44336, #334452);
+  --svg-bg: #0e3040;
+}
+
+body {
+  background: var(--svg-bg);
 }
 
 .container {
@@ -26,15 +31,16 @@
 
 .container .display__title {
   font-weight: bold;
-  color: #40c1e9;
-  background: var(--inverse-bg);
+  color: var(--title_text);
+  padding: 5px;
 }
 
 .container .display__svg {
-  background: var(--svg-bg);
-  -webkit-box-shadow: 0 2px 4px #333;
-          box-shadow: 0 2px 4px #333;
   text-align: center;
+}
+
+.container .display__svg .dot {
+  stroke: rgba(29, 18, 15, 0.87);
 }
 
 .container #tooltip {
@@ -45,11 +51,12 @@
 }
 
 .container #tooltip label {
-  color: var(--text);
+  padding: 1px;
+  color: rgba(231, 221, 221, 0.89);
 }
 
 .container #tooltip label b {
-  color: #0bcae2f2;
+  color: #32c5df;
 }
 
 .container #x-axis,
@@ -65,38 +72,6 @@
 @media only screen and (min-width: 768px) {
   .container .y-axis-label {
     font-size: 2em;
-  }
-}
-
-#preloader {
-  color: rgba(236, 106, 19, 0.884);
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
-  -webkit-animation: blink 1s infinite;
-          animation: blink 1s infinite;
-}
-
-@-webkit-keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */
