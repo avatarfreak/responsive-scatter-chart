@@ -90,6 +90,8 @@ Project
 
 ### Technologies used
 
+- webpack4
+- Babel
 - ES6
 - svg
 - D3.js v5
@@ -99,6 +101,18 @@ Clone this repo:
 ```
 $ git clone https://github.com/avatarfreak/responsive-scatter-chart
 ```
+
+#### Installing:
+
+- clone this project
+
+  - `$ git clone "https://github.com/avatarfreak/responsive-scatter-chart.git"`
+  - `$ cd responsive-scatter-chart`
+  - `$ npm install`
+  - `$ npm run build`
+  - `$ npm run start`
+
+---
 
 #### Author
 
