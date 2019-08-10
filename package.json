@@ -1,5 +1,5 @@
 {
-  "name": "responsive-bar-chart",
+  "name": "responsive-scatter-chart",
   "version": "1.0.0",
   "homepage": "https://avatarfreak.github.io/responsive-scatter-chart",
   "main": "index.js",
@@ -43,5 +43,5 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {},
-  "description": "Responsive bar chart project from fcc Data Visualization"
+  "description": "Responsive scatter chart project from fcc Data Visualization"
 }

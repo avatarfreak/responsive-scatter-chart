@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 
-let dataset = d3.json("cyclist-data.json").then(res => res);
+let dataset = d3.json("../assets/cyclist.json").then(res => res);
 dataset.then(data => {
   //event listener for responsive behaviour
   window.addEventListener("resize", render);
