@@ -48,6 +48,19 @@ body {
       }
     }
   }
+  address {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    color: var(--title_text);
+    font-size: 11px;
+    #profile-link {
+      color: rgb(165, 226, 21);
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
 
   #tooltip {
     text-align: left;

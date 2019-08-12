@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 
-let dataset = d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json").then(res => res);
+//let dataset = d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json").then(res => res);
+let dataset = d3.json("../assets/cyclist.json").then(res => res);
 dataset.then(data => {
   //hide preloader
   document.querySelector('#loading').remove()
@@ -159,7 +160,7 @@ function drawchart(data, selection, props) {
     .attr("data-xvalue", d => d.Year)
     .attr("data-yvalue", (d, i) => time[i].toISOString())
     .attr("cx", (d, i) => xScale(d.Year[i]))
-    .attr("cy", (d, i) => i)
+    .attr("cy", (d, i) => innerHeight)
     .attr("r", 8)
     .style("fill", function(d) {
       return color(d.Doping != "");
