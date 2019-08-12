@@ -1,7 +1,6 @@
 import * as d3 from "d3";
 
-//let dataset = d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json").then(res => res);
-let dataset = d3.json("../assets/cyclist.json").then(res => res);
+let dataset = d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json").then(res => res);
 dataset.then(data => {
   //hide preloader
   document.querySelector('#loading').remove()
