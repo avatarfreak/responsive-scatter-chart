@@ -30,6 +30,17 @@ body {
       text-align: center; }
       .container .display__svg .dot {
         stroke: rgba(29, 18, 15, 0.87); }
+  .container address {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    color: var(--title_text);
+    font-size: 11px; }
+    .container address #profile-link {
+      color: #a5e215;
+      text-decoration: none;
+      font-weight: bold; }
   .container #tooltip {
     text-align: left;
     background: rgba(47, 79, 79, 0.938);
