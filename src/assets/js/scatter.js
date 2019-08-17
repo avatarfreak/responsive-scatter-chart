@@ -3,7 +3,7 @@ import * as d3 from "d3";
 let dataset = d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json").then(res => res);
 dataset.then(data => {
   //hide preloader
-  document.querySelector('#loading').remove()
+  document.querySelector("#loading").remove();
 
   //event listener for responsive behaviour
   window.addEventListener("resize", render);
@@ -146,6 +146,25 @@ function drawchart(data, selection, props) {
     .style("border-radius", "5px")
     .style("opacity", "0");
 
+  //create cross hair for drop axis
+  const dropAxis = svg
+    .append("g")
+    .attr("class", "dropAxis")
+    .style("opacity", 0)
+    .attr("stroke", "#7cfc00")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+  const xdashedLine = dropAxis
+    .append("line")
+    .attr("stroke-width", 1)
+    .attr("stroke-dasharray", 4);
+
+  const ydashedLine = dropAxis
+    .append("line")
+    .attr("stroke-width", 1)
+    .attr("stroke-dasharray", 4);
+
+  
   //color scheme and range
   const color = d3.scaleOrdinal(d3.schemeAccent);
 
@@ -188,16 +207,33 @@ function drawchart(data, selection, props) {
         .style("left", `${d3.event.pageX}px`)
         .style("top", `${d3.event.pageY}px`);
 
+      dropAxis.style("opacity", 1);
+
+      xdashedLine
+        .attr("x1", xScale(d.Year))
+        .attr("x2", xScale(d.Year))
+        .attr("y1", innerHeight)
+        .attr("y2", yScale(time[i]));
+
+      ydashedLine
+        .attr("x1", 0)
+        .attr("x2", xScale(d.Year))
+        .attr("y1", yScale(time[i]))
+        .attr("y2", yScale(time[i]));
+
       d3.select(this)
         .transition()
         .duration(200)
-        .attr("r", 25);
+        .attr("r", 20);
     })
     .on("mouseout", function() {
       tooltip
         .transition()
         .duration(200)
         .style("opacity", 0);
+      
+      dropAxis.style("opacity", 0);
+
       d3.select(this)
         .transition()
         .duration(200)
